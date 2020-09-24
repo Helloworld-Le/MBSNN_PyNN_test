@@ -3,39 +3,7 @@ import sys
 
 
 import numpy as np
-import pylab as plt
-import spynnaker8 as sim
-from pyNN.utility.plotting import Figure, Panel
 
-# SpiNNaker setup
-sim.setup(timestep=1.0, min_delay=1.0, max_delay=14)
-# +---------------------------------------------------------------------------+
-# | General Parameters                                                        |
-# +---------------------------------------------------------------------------+
-
-# Population parameters
-model = sim.IF_curr_exp
-sim.set_number_of_neurons_per_core(sim.IF_curr_exp, 50)
-cell_params = {'cm': 0.25,
-               'i_offset': 0.0,
-               'tau_m': 20.0,
-               'tau_refrac': 2.0,
-               'tau_syn_E': 5.0,
-               'tau_syn_I': 5.0,
-               'v_reset': -70.0,
-               'v_rest': -65.0,
-               'v_thresh': -50.0
-               }
-sys.setrecursionlimit(20000)
-options = argparse.Namespace(debug=None, plot_figure=True, simulator='nest')
-
-
-if options.debug:
-    init_logging(None, debug=True)
-
-
-import matplotlib.pyplot as plt
-from DVS import *
 from PYNN_PN2EN import *
 random.seed = 2020
 numpy.random.RandomState(seed = 2020)
