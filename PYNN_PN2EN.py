@@ -126,23 +126,23 @@ class MB_LE(object):
 
         # === Save the results, optionally plot a figure =============================
 
-        filename = normalized_filename("Results" , "Izhikevich" , "pkl" ,
-                                       options.simulator , sim.num_processes())
-        self.ens.write_data(filename , annotations = {'script_name': __file__})
+#         filename = normalized_filename("Results" , "Izhikevich" , "pkl" ,
+#                                        options.simulator , sim.num_processes())
+#         self.ens.write_data(filename , annotations = {'script_name': __file__})
 
-        if options.plot_figure:
-            from pyNN.utility.plotting import Figure , Panel
-            figure_filename = filename.replace("pkl" , "png")
-            data = self.ens.get_data().segments[0]
-            v = data.filter(name = "v")[0]
-            # u = data.filter(name="u")[0]
-            Figure(
-                Panel(v , ylabel = "Membrane potential (mV)" , xticks = True ,
-                      xlabel = "Time (ms)" , yticks = True) ,
-                # Panel(u, ylabel="u variable (units?)"),
-                annotations = "Simulated with %s" % options.simulator.upper()
-            ).save(figure_filename)
-            print(figure_filename)
+#         if options.plot_figure:
+#             from pyNN.utility.plotting import Figure , Panel
+#             figure_filename = filename.replace("pkl" , "png")
+#             data = self.ens.get_data().segments[0]
+#             v = data.filter(name = "v")[0]
+#             # u = data.filter(name="u")[0]
+#             Figure(
+#                 Panel(v , ylabel = "Membrane potential (mV)" , xticks = True ,
+#                       xlabel = "Time (ms)" , yticks = True) ,
+#                 # Panel(u, ylabel="u variable (units?)"),
+#                 annotations = "Simulated with %s" % options.simulator.upper()
+#             ).save(figure_filename)
+#             print(figure_filename)
 
         # === Clean up and quit ========================================================
 
