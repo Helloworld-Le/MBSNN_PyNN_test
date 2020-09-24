@@ -80,7 +80,7 @@ nb_pn = 210
 nb_kc = 10000
 nb_en = 1
 
-nb_pn2kc = params['Neuron2Neuron']['nb_pn2kc']
+nb_pn2kc = 5
 
 
 def pn2kc(nb_pn, nb_kc, nb_pn2kc):
