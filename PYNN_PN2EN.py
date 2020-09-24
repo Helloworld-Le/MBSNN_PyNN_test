@@ -2,7 +2,7 @@
 import matplotlib as plt
 from copy import *
 import os
-import pyyaml
+import yaml
 import scipy.io as sio
 
 from scipy.sparse import rand
@@ -63,7 +63,7 @@ if options.debug:
 
 random.seed = 2020
 numpy.random.RandomState(seed = 2020)
-import yaml
+
 
 # load parameters
 with open('MBSNN_params.yaml' , 'rb') as f:
