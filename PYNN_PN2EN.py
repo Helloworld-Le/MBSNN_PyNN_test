@@ -6,11 +6,9 @@ import yaml
 import scipy.io as sio
 
 from scipy.sparse import rand
-import brian2
+
 import random
-from deap import base
-from deap import creator
-from deap import tools
+
 import json
 import argparse
 
@@ -21,7 +19,7 @@ import argparse
 from numpy import arange
 from pyNN.utility import get_simulator, init_logging, normalized_filename
 import numpy as np
-import numpy as np
+
 import pylab as plt
 import spynnaker8 as sim
 from pyNN.utility.plotting import Figure, Panel
