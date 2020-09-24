@@ -111,8 +111,8 @@ learn_input, test_input, chop_input, flip_input, max_t = dvs2input('data/210PN_w
 
 mb_test = MB_LE(dvs_input = learn_input,sim_t = max_t)
 mb_test.run_sim()
-mb_test1 = MB_LE(dvs_input = test_input,sim_t = max_t)
-mb_test1.run_sim()
+# mb_test1 = MB_LE(dvs_input = test_input,sim_t = max_t)
+# mb_test1.run_sim()
 # mb_test1 = MB_LE(dvs_input = test_input, pars = pars, w_kc2kc= mb_learn.S_kc2kc_learning.w)
 # mb_test1.run_sim()
 # plot_noise_EN(mb_test1, title = 'test sequence')
