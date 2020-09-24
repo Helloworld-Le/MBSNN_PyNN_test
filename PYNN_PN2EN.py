@@ -128,7 +128,7 @@ class MB_LE(object):
 
         filename = normalized_filename("Results" , "Izhikevich" , "pkl" ,
                                        options.simulator , sim.num_processes())
-        self.MBONs.write_data(filename , annotations = {'script_name': __file__})
+        self.ens.write_data(filename , annotations = {'script_name': __file__})
 
         if options.plot_figure:
             from pyNN.utility.plotting import Figure , Panel
