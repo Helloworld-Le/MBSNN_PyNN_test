@@ -83,16 +83,6 @@ nb_en = 1
 nb_pn2kc = 5
 
 
-def pn2kc(nb_pn, nb_kc, nb_pn2kc):
-    d = float(nb_pn2kc) / float(nb_pn)
-    matrix = rand(nb_pn, nb_kc, density = d, format = "csr", dtype = bool, random_state = 2020)
-    pn2kc = nonzero(matrix)
-    return pn2kc
-
-
-wm_pn2kc = pn2kc(nb_pn , nb_kc , nb_pn2kc)
-
-
 class MB_LE(object):
 
     def __init__(self, dvs_input, sim_t, w_kc2kc=0):
