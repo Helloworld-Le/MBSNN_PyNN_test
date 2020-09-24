@@ -1,7 +1,10 @@
 import argparse
 import sys
 sys.setrecursionlimit(20000)
-import pyNN.nest as sim
+import numpy as np
+import pylab as plt
+import spynnaker8 as sim
+from pyNN.utility.plotting import Figure, Panel
 options = argparse.Namespace(debug=None, plot_figure=True, simulator='nest')
 
 
