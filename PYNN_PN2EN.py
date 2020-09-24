@@ -77,7 +77,7 @@ numpy.random.RandomState(seed = 2020)
 # nb_en = params['NB_Neuron']['EN']
 
 nb_pn = 210
-nb_kc = 10000
+nb_kc = 20000
 nb_en = 1
 
 nb_pn2kc = 5
