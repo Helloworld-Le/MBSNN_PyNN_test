@@ -2,7 +2,7 @@
 import matplotlib as plt
 from copy import *
 import os
-import yaml
+
 import scipy.io as sio
 
 from scipy.sparse import rand
@@ -65,15 +65,19 @@ random.seed = 2020
 numpy.random.RandomState(seed = 2020)
 
 
-# load parameters
-with open('MBSNN_params.yaml' , 'rb') as f:
-    params = yaml.safe_load(f)
+# # load parameters
+# with open('MBSNN_params.yaml' , 'rb') as f:
+#     params = yaml.safe_load(f)
 
-##global
+# ##global
 
-nb_pn = params['NB_Neuron']['PN']
-nb_kc = params['NB_Neuron']['KC']
-nb_en = params['NB_Neuron']['EN']
+# nb_pn = params['NB_Neuron']['PN']
+# nb_kc = params['NB_Neuron']['KC']
+# nb_en = params['NB_Neuron']['EN']
+
+nb_pn = 210
+nb_kc = 10000
+nb_en = 1
 
 nb_pn2kc = params['Neuron2Neuron']['nb_pn2kc']
 
