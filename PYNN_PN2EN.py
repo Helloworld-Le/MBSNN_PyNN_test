@@ -19,6 +19,7 @@ import argparse
 from numpy import arange
 from pyNN.utility import get_simulator, init_logging, normalized_filename
 import numpy as np
+import numpy
 
 import pylab as plt
 import spynnaker8 as sim
