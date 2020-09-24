@@ -108,7 +108,7 @@ def dvs2input(filename):
 
 learn_input, test_input, chop_input, flip_input, max_t = dvs2input('data/210PN_without_smooth/NB5_2020-02-19-11-19-03.mat')
 
-print shape(learn_input), shape(learn_input[0]), type(learn_input[0][0]),learn_input[0][0]
+
 mb_test = MB_LE(dvs_input = learn_input,sim_t = max_t)
 mb_test.run_sim()
 mb_test1 = MB_LE(dvs_input = test_input,sim_t = max_t)
