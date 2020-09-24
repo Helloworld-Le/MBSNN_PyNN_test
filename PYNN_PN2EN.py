@@ -94,7 +94,7 @@ class MB_LE(object):
         self.pn_neuron_idx = range(0 , nb_pn , nb_pn / 5)
         self.kc_neuron_idx = range(0 , nb_kc , nb_kc / 10)
 
-        self.spike_source = sim.Population(nb_pn, sim.SpikeSourceArray(spike_times = dvs_input))
+        self.spike_source = sim.Population(nb_pn, sim.SpikeSourceArray(spike_times = dvs_input),label = "DVS")
         self.pns = sim.Population(nb_pn , model(**cell_params), label = "PN")
         self.kcs = sim.Population(nb_kc , model(**cell_params) , label = "KC")
         self.kcs_a = sim.Population(nb_kc ,model(**cell_params), label = "KC_A")
