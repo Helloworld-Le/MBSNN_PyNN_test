@@ -2,7 +2,7 @@
 import matplotlib as plt
 from copy import *
 import os
-import yaml
+import pyyaml
 import scipy.io as sio
 
 from scipy.sparse import rand
