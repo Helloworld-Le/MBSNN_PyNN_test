@@ -1,0 +1,55 @@
+NB_Neuron:
+  PN: 210
+  KC: 10000
+  EN: 1
+
+Neuron_model:
+  PN:
+    resting_potential: -55
+    reset_potential: -45
+    threshold_potential: -40
+    time_constant: 11.5
+
+    rest_firing_rate: 4
+    active_firing_rate: 20
+
+    time_constant_threshold_voltage: 104
+    threshold_voltage_increase: 10
+
+  KC:
+    resting_potential: -60
+    reset_potential: -50
+    threshold_potential: -45
+    time_constant: 11.5
+
+    rest_firing_rate: 0.0025
+    active_firing_rate: 2.5
+
+    time_constant_threshold_voltage: 1600
+    threshold_voltage_increase: 10
+
+
+
+  EN:
+    resting_potential: -55
+    threshold_potential: -40
+    action_potential: 15
+    reset_potential: -50
+    time_constant: 11.5
+    rest_firing_rate: 4
+
+
+    active_firing_rate: 300
+    synaptic_current_time_constant: 15
+
+
+Neuron2Neuron:
+  v_in2pn: 20
+  v_pn2kc: 3
+  i_kc2en: 2
+  nb_pn2kc: 3
+
+
+
+
+
