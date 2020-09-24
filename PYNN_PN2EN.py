@@ -117,8 +117,10 @@ class MB_LE(object):
                                sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
                                receptor_type = 'excitatory')
 
-        self.MBONs = self.ens + self.ens_a
-        self.MBONs.record(['v'])  # , 'u'])
+        
+        self.ens.record(['v', 'spikes'])
+        self.ens_a.record(['v', 'spikes'])
+        
     def run_sim(self):
         sim.run(self.sim_t)
 
@@ -131,7 +133,7 @@ class MB_LE(object):
         if options.plot_figure:
             from pyNN.utility.plotting import Figure , Panel
             figure_filename = filename.replace("pkl" , "png")
-            data = self.MBONs.get_data().segments[0]
+            data = self.ens.get_data().segments[0]
             v = data.filter(name = "v")[0]
             # u = data.filter(name="u")[0]
             Figure(
