@@ -116,7 +116,9 @@ class MB_LE(object):
         self.kc_a2en_a = sim.Projection(self.kcs_a , self.ens_a , sim.AllToAllConnector() ,
                                sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
                                receptor_type = 'excitatory')
-
+        self.kc_a2kc_a = sim.Projection(self.kcs , self.kcs_a , sim.AllToAllConnector() ,
+                               sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
+                               receptor_type = 'excitatory')
         
         self.ens.record(['v', 'spikes'])
         self.ens_a.record(['v', 'spikes'])
