@@ -102,13 +102,13 @@ class MB_LE(object):
         self.ens_a = sim.Population(nb_en , model(**cell_params), label = "EN_A")
 
         self.dvs2pn = sim.Projection(self.spike_source , self.pns , sim.OneToOneConnector() ,
-                                    sim.StaticSynapse(weight = 1 , delay = 1.0) ,
+                                    sim.StaticSynapse(weight = 0.5 , delay = 1.0) ,
                                     receptor_type = 'excitatory')
         self.pn2kc = sim.Projection(self.pns , self.kcs , sim.FixedTotalNumberConnector(nb_pn2kc*nb_kc) ,
-                               sim.StaticSynapse(weight = 0.5 , delay = 1.0) ,
+                               sim.StaticSynapse(weight = 0.2 , delay = 1.0) ,
                                receptor_type = 'excitatory')
         self.pn2kc_a = sim.Projection(self.pns , self.kcs_a , sim.FixedTotalNumberConnector(nb_pn2kc*nb_kc) ,
-                               sim.StaticSynapse(weight = 0.5 , delay = 1.0) ,
+                               sim.StaticSynapse(weight = 0.2 , delay = 1.0) ,
                                receptor_type = 'excitatory')
         self.kc2en = sim.Projection(self.kcs , self.ens , sim.AllToAllConnector() ,
                                sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
