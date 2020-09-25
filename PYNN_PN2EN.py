@@ -36,7 +36,7 @@ model = sim.IF_curr_exp
 sim.set_number_of_neurons_per_core(sim.IF_curr_exp, 50)
 cell_params = {'cm': 0.25,
                'i_offset': 0.0,
-               'tau_m': 20.0,
+               'tau_m': 10.0,
                'tau_refrac': 2.0,
                'tau_syn_E': 5.0,
                'tau_syn_I': 5.0,
@@ -102,19 +102,19 @@ class MB_LE(object):
         self.ens_a = sim.Population(nb_en , model(**cell_params), label = "EN_A")
 
         self.dvs2pn = sim.Projection(self.spike_source , self.pns , sim.OneToOneConnector() ,
-                                    sim.StaticSynapse(weight = 0.1, delay = 1.0) ,
+                                    sim.StaticSynapse(weight = 0.2, delay = 1.0) ,
                                     receptor_type = 'excitatory')
         self.pn2kc = sim.Projection(self.pns , self.kcs , sim.FixedTotalNumberConnector(nb_pn2kc*nb_kc) ,
-                               sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
+                               sim.StaticSynapse(weight = 0.15 , delay = 1.0) ,
                                receptor_type = 'excitatory')
         self.pn2kc_a = sim.Projection(self.pns , self.kcs_a , sim.FixedTotalNumberConnector(nb_pn2kc*nb_kc) ,
-                               sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
+                               sim.StaticSynapse(weight = 0.15 , delay = 1.0) ,
                                receptor_type = 'excitatory')
         self.kc2en = sim.Projection(self.kcs , self.ens , sim.AllToAllConnector() ,
-                               sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
+                               sim.StaticSynapse(weight = 0.15 , delay = 1.0) ,
                                receptor_type = 'excitatory')
         self.kc_a2en_a = sim.Projection(self.kcs_a , self.ens_a , sim.AllToAllConnector() ,
-                               sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
+                               sim.StaticSynapse(weight = 0.15 , delay = 1.0) ,
                                receptor_type = 'excitatory')
         self.kc_a2kc_a = sim.Projection(self.kcs , self.kcs_a , sim.AllToAllConnector() ,
                                sim.StaticSynapse(weight = 0.1 , delay = 1.0) ,
